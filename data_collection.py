@@ -33,11 +33,11 @@ for i in range(0,x):
     file.write('\tRun: %s' % run)
     file.write('\n\nCollected at: %s' % current_time)
     file.write('\nEpoch time: %s\n\n' % universal_time)
-        for cmd in commands_to_run:
-	    c = os.popen('%s' % cmd)
-	    command = c.read()
-	    file.write(command)
-	    file.write(border1)
+    for cmd in commands_to_run:
+	c = os.popen('%s' % cmd)
+	command = c.read()
+	file.write(command)
+	file.write(border1)
     stdout.write('\rRunning %s out of %s' % (run, x))
     stdout.flush()
     if i < (x - 1):

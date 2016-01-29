@@ -27,22 +27,22 @@ file.write('Below file is an output of commands: %r\n' % commands_to_run)
 file.write(border)
 
 for i in range(0,x):
-	run = i + 1
-	current_time = time.ctime()
-	universal_time = str(time.time())
-	file.write('\tRun: %s' % run)
-	file.write('\n\nCollected at: %s' % current_time)
-	file.write('\nEpoch time: %s\n\n' % universal_time)
-	for cmd in commands_to_run:
-		c = os.popen('%s' % cmd)
-		command = c.read()
-		file.write(command)
-		file.write(border1)
-	stdout.write('\rRunning %s out of %s' % (run, x))
-	stdout.flush()
-	if i < (x - 1):
-		time.sleep(time_interval)
-		file.write(border)
+    run = i + 1
+    current_time = time.ctime()
+    universal_time = str(time.time())
+    file.write('\tRun: %s' % run)
+    file.write('\n\nCollected at: %s' % current_time)
+    file.write('\nEpoch time: %s\n\n' % universal_time)
+        for cmd in commands_to_run:
+	    c = os.popen('%s' % cmd)
+	    command = c.read()
+	    file.write(command)
+	    file.write(border1)
+    stdout.write('\rRunning %s out of %s' % (run, x))
+    stdout.flush()
+    if i < (x - 1):
+        time.sleep(time_interval)
+	file.write(border)
 
 print '\n\nOutput collected to %s > exiting' % filename
 file.close()

@@ -36,15 +36,15 @@ for i in range(0,x):
     file.write('\n\nCollected at: %s' % current_time)
     file.write('\nEpoch time: %s\n\n' % universal_time)
     for cmd in commands_to_run:
-    c = os.popen('%s' % cmd)
-    command = c.read()
-    file.write(command)
-    file.write(border1)
+        c = os.popen('%s' % cmd)
+        command = c.read()
+        file.write(command)
+        file.write(border1)
     stdout.write('\rRunning %s out of %s' % (run, x))
     stdout.flush()
     if i < (x - 1):
         time.sleep(time_interval)
-    file.write(border)
+        file.write(border)
 
 print '\n\nOutput collected to %s > exiting' % filename
 file.close()
